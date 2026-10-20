@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#20172e">
+<meta name="description" content="Kothayon — বাংলা গল্প, উপন্যাস, প্রেম, রহস্য ও কবিতার সুন্দর পাঠজগৎ।">
+<title>Kothayon | বাংলা গল্প ও উপন্যাস</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#251a35;--purple:#7851a9;--cream:#fbf8f4;--paper:#fff;--muted:#817788;--line:#eee5ef;--gold:#e3bd80}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Noto Sans Bengali',sans-serif;line-height:1.8}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:#20172e;color:white;box-shadow:0 3px 18px #160e221c}
+.navbar{max-width:1160px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.logo{font-family:'Noto Serif Bengali',serif;font-size:26px;font-weight:700;color:#f0d5a5;line-height:1.3}
+.logo span{display:block;font-family:Arial,sans-serif;font-size:10px;letter-spacing:3px;color:#e9ddeb}
+nav{display:flex;gap:20px;align-items:center;font-size:14px}
+nav a:hover{color:var(--gold)}
+.hero{padding:55px 18px 45px;text-align:center;color:#fff;background:radial-gradient(ellipse at top left,#60447c,transparent 60%),linear-gradient(135deg,#20172e,#453054)}
+.eyebrow{font-size:12px;letter-spacing:2px;color:#f0d5a5}
+.hero h1{font-family:'Noto Serif Bengali',serif;font-size:clamp(30px,5vw,49px);line-height:1.45;margin:14px 0}
+.hero p{max-width:580px;margin:0 auto 23px;color:#e7dce9;font-size:15px}
+.search{display:flex;max-width:490px;margin:auto;gap:8px}
+.search input{min-width:0;flex:1;padding:13px 15px;border:1px solid #ffffff55;border-radius:10px;background:white;outline:none}
+.search button,.btn{background:var(--gold);color:#281c35;border:0;border-radius:10px;padding:11px 18px;font-weight:700}
+.wrap{max-width:1160px;margin:auto;padding:32px 20px}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}
+.section-title h2{font-family:'Noto Serif Bengali',serif;font-size:23px;margin:0}
+.muted{color:var(--muted);font-size:13px}
+.categories{display:flex;gap:9px;overflow-x:auto;padding:3px 0 16px}
+.chip{white-space:nowrap;border:1px solid var(--line);border-radius:30px;padding:7px 15px;background:#fff;color:var(--ink)}
+.chip.active,.chip:hover{background:var(--purple);color:white}
+.feature{display:grid;grid-template-columns:1.15fr 1fr;border-radius:18px;overflow:hidden;background:#ede3f3;margin:12px 0 38px;min-height:235px}
+.feature-art{display:grid;place-items:center;min-height:220px;background:linear-gradient(140deg,#dac8eb,#f5e4d9);font-size:85px}
+.feature-copy{padding:25px;align-self:center}
+.feature-copy h2{font-family:'Noto Serif Bengali',serif;font-size:27px;line-height:1.5;margin:7px 0}
+.label{font-size:11px;color:var(--purple);font-weight:700;letter-spacing:1px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden;transition:transform .22s,box-shadow .22s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #37234312}
+.art{height:150px;display:grid;place-items:center;font-size:55px;background:linear-gradient(135deg,#e6d8f2,#f8e8e5)}
+.art.blue{background:linear-gradient(135deg,#d8e8f3,#ede0f6)}
+.art.gold{background:linear-gradient(135deg,#f5e0c5,#f8efda)}
+.art.green{background:linear-gradient(135deg,#dce9d8,#f7e9d9)}
+.card-body{padding:15px}
+.card h3{font-family:'Noto Serif Bengali',serif;font-size:18px;line-height:1.55;margin:5px 0}
+.card p{font-size:13px;color:var(--muted);margin:6px 0 13px}
+.read{border:1px solid #e7d8ef;border-radius:8px;padding:6px 12px;background:#fff;color:var(--purple);font-size:13px}
+.read:hover{background:var(--purple);color:white}
+.empty{display:none;text-align:center;padding:22px;color:var(--muted)}
+.about{margin:38px 0;background:#eee5f4;border-radius:16px;padding:23px}
+.about h2{font-family:'Noto Serif Bengali',serif;margin:0 0 7px}
+footer{background:#20172e;color:#eee2f2;padding:30px 18px;text-align:center;font-size:13px}
+footer strong{font-family:'Noto Serif Bengali',serif;font-size:21px;color:#f0d5a5}
+footer p{margin:4px}
+.modal{display:none;position:fixed;inset:0;z-index:40;background:#150d20c9;overflow:auto;padding:15px}
+.reader{max-width:740px;background:#fffaf6;margin:25px auto;padding:24px;border-radius:16px}
+.reader-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.reader h2{font-family:'Noto Serif Bengali',serif}
+.close{border:0;border-radius:8px;padding:8px 12px;background:#eee5f4}
+#storyText{white-space:pre-line;line-height:2.2}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.card,.feature{animation:rise .65s ease both}
+@media(max-width:700px){
+ .navbar{align-items:flex-start;flex-direction:column;gap:10px}
+ nav{width:100%;gap:17px;overflow-x:auto;white-space:nowrap;padding-bottom:3px}
+ .hero{padding:39px 15px}
+ .wrap{padding:25px 14px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .art{height:112px;font-size:43px}
+ .card-body{padding:11px}
+ .card h3{font-size:16px}
+ .feature{grid-template-columns:1fr}
+ .feature-art{min-height:130px;font-size:60px}
+ .feature-copy{padding:19px}
+ .section-title h2{font-size:20px}
+}
+@media(max-width:360px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+ <div class="navbar">
+  <a class="logo" href="#">কথায়ন<span>K O T H A Y O N</span></a>
+  <nav>
+   <a href="#">হোম</a>
+   <a href="#stories">গল্প ও উপন্যাস</a>
+   <a href="#categories">বিভাগ</a>
+   <a href="#about">আমাদের সম্পর্কে</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="eyebrow">✦ বাংলা সাহিত্য • গল্প • কল্পনা ✦</div>
+ <h1>কিছু কথা থেকে যায়,<br>গল্প হয়ে হৃদয়ে</h1>
+ <p>প্রেম, রহস্য, অভিমান আর জীবনের অজস্র অনুভূতি—খুঁজে নাও তোমার মনের গল্প।</p>
+ <div class="search">
+  <input id="search" type="search" placeholder="গল্প বা উপন্যাস খুঁজুন..." aria-label="গল্প খুঁজুন">
+  <button onclick="filterStories()">খুঁজুন</button>
+ </div>
+</section>
+
+<main class="wrap">
+ <section id="categories">
+  <div class="section-title"><h2>বেছে নাও তোমার জগৎ</h2></div>
+  <div class="categories">
+   <button class="chip active" onclick="setCategory('সব',this)">সব গল্প</button>
+   <button class="chip" onclick="setCategory('প্রেম',this)">♡ প্রেম</button>
+   <button class="chip" onclick="setCategory('উপন্যাস',this)">উপন্যাস</button>
+   <button class="chip" onclick="setCategory('রহস্য',this)">রহস্য</button>
+   <button class="chip" onclick="setCategory('জীবন',this)">জীবনের গল্প</button>
+   <button class="chip" onclick="setCategory('কবিতা',this)">কবিতা</button>
+  </div>
+ </section>
+
+ <section class="feature">
+  <div class="feature-art">📖✨</div>
+  <div class="feature-copy">
+   <span class="label">আজকের বিশেষ গল্প</span>
+   <h2>মায়া নাকি মোহ</h2>
+   <p>কিছু সম্পর্কের নাম হয় না, তবু তাদের অনুভূতি সারাজীবন থেকে যায়।</p>
+   <button class="btn" onclick="openStory(0)">গল্পটি পড়ুন →</button>
+  </div>
+ </section>
+
+ <section id="stories">
+  <div class="section-title">
+   <div><h2>নতুন গল্পের পাতা</h2><div class="muted">তোমার পরের প্রিয় গল্পটি এখানেই</div></div>
+  </div>
+  <div class="grid" id="storyGrid">
+   <article class="card" data-category="প্রেম উপন্যাস" data-search="মায়া নাকি মোহ প্রেম ভালোবাসা">
+    <div class="art">💜</div><div class="card-body">
+     <span class="label">প্রেম · উপন্যাস</span><h3>মায়া নাকি মোহ</h3>
+     <p>কিছু অনুভূতি কখনো পুরোনো হয় না...</p><button class="read" onclick="openStory(0)">পড়তে থাকুন →</button>
+    </div>
+   </article>
+   <article class="card" data-category="রহস্য" data-search="নীরব রাতের রহস্য অজানা">
+    <div class="art blue">🌙</div><div class="card-body">
+     <span class="label">রহস্য</span><h3>নীরব রাতের রহস্য</h3>
+     <p>বন্ধ দরজার ওপাশে কে অপেক্ষা করছিল?</p><button class="read" onclick="openStory(1)">পড়তে থাকুন →</button>
+    </div>
+   </article>
+   <article class="card" data-category="জীবন" data-search="ফেরার বেলা জীবন স্মৃতি">
+    <div class="art gold">🍂</div><div class="card-body">
+     <span class="label">জীবন · অনুভূতি</span><h3>ফেরার বেলা</h3>
+     <p>কখনো কখনো ফিরে আসাই নতুন শুরু।</p><button class="read" onclick="openStory(2)">পড়তে থাকুন →</button>
+    </div>
+   </article>
+   <article class="card" data-category="কবিতা প্রেম" data-search="এক মুঠো কবিতা প্রেম">
+    <div class="art green">🌿</div><div class="card-body">
+     <span class="label">কবিতা · প্রেম</span><h3>এক মুঠো কবিতা</h3>
+     <p>কিছু না বলা কথা, কয়েকটি সাজানো পঙ্‌ক্তি।</p><button class="read" onclick="openStory(3)">পড়তে থাকুন →</button>
+    </div>
+   </article>
+  </div>
+  <div class="empty" id="empty">এই নামে কোনো গল্প পাওয়া যায়নি। অন্য শব্দ দিয়ে খুঁজুন।</div>
+ </section>
+
+ <section class="about" id="about">
+  <h2>Kothayon — কথায়নের গল্পজগৎ</h2>
+  <p>বাংলা গল্প, ধারাবাহিক উপন্যাস, কবিতা, প্রেম ও রহস্যের জন্য একটি সুন্দর পাঠের ঠিকানা। লেখকের নাম ও নিজের লেখা যোগ করে এই সাইটকে তোমার নিজস্ব সাহিত্যজগৎ করে তোলো।</p>
+ </section>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="readerTitle">
+ <article class="reader">
+  <div class="reader-head"><h2 id="readerTitle">গল্প</h2><button class="close" onclick="closeStory()">বন্ধ করুন ✕</button></div>
+  <hr style="border:0;border-top:1px solid #eee">
+  <div id="storyText"></div>
+  <p class="muted">এগুলো নমুনা গল্প। প্রকাশের আগে নিজের সম্পূর্ণ লেখা যোগ করো।</p>
+ </article>
+</div>
+
+<footer>
+ <p><strong>Kothayon | কথায়ন</strong></p>
+ <p>গল্পের পাতায়, অনুভূতির ঠিকানায়।</p>
+ <p>© <span id="year"></span> Kothayon. সর্বস্বত্ব সংরক্ষিত।</p>
+</footer>
+
+<script>
+const stories=[
+ {title:"মায়া নাকি মোহ",text:"সন্ধ্যার আকাশে শেষ রোদের রং মিশে যাচ্ছিল।\n\nঅর্ণব জানালার পাশে দাঁড়িয়ে ভাবছিল, কিছু মানুষ কি সত্যিই আমাদের জীবনে থাকার জন্য আসে, নাকি শুধু কিছু স্মৃতি রেখে চলে যাওয়ার জন্য?\n\nফোনের পর্দায় একটি পুরোনো নাম জ্বলে উঠল। বুকের ভেতর জমে থাকা কথাগুলো আবার নড়েচড়ে বসল।\n\nকিছু সম্পর্কের কোনো সংজ্ঞা হয় না। তবু তাদের ভুলে যাওয়া যায় না।"},
+ {title:"নীরব রাতের রহস্য",text:"রাত তখন বারোটা পেরিয়েছে। চারদিকে নিস্তব্ধতা।\n\nহঠাৎ পুরোনো বাড়ির বন্ধ ঘর থেকে তিনবার শব্দ এল। রাহুল জানত, ঘরটি বহু বছর ধরে তালাবন্ধ।\n\nদরজার নিচে পড়ে থাকা কাগজে লেখা—'অবশেষে তুমি ফিরেছ।'\n\nএরপর কী ঘটল, তা নিয়ে একটি পূর্ণাঙ্গ রহস্যগল্প লিখে এখানে যোগ করো।"},
+ {title:"ফেরার বেলা",text:"বহু বছর পর গ্রামের পথে পা রেখেই মাটির গন্ধে মন ভরে গেল।\n\nযে উঠোনে একদিন শৈশব কেটেছিল, সেখানে আজও পুরোনো আমগাছটি দাঁড়িয়ে আছে। শুধু মানুষগুলো বদলে গেছে, বদলে গেছে সময়।\n\nবাড়ির দরজায় দাঁড়িয়ে মনে হলো, ফিরে আসা মানে শুধু একটা জায়গায় ফেরা নয়—কখনো কখনো নিজের কাছেও ফিরে আসা।"},
+ {title:"এক মুঠো কবিতা",text:"জানালায় এসে থামে নরম হাওয়া,\nমনে পড়ে যায় পুরোনো চাওয়া।\n\nকিছু কথা থাকে মনেরই কোণে,\nকিছু স্মৃতি জেগে ওঠে নির্জনে।"}
+];
+let currentCategory="সব";
+function setCategory(category,button){
+ currentCategory=category;
+ document.querySelectorAll(".chip").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+ filterStories();
+}
+function filterStories(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ let count=0;
+ document.querySelectorAll(".card").forEach(card=>{
+  const cat=card.dataset.category||"";
+  const txt=(card.dataset.search+" "+card.innerText).toLowerCase();
+  const show=(currentCategory==="সব"||cat.includes(currentCategory))&&txt.includes(q);
+  card.style.display=show?"":"none";
+  if(show)count++;
+ });
+ document.getElementById("empty").style.display=count?"none":"block";
+}
+function openStory(i){
+ document.getElementById("readerTitle").textContent=stories[i].title;
+ document.getElementById("storyText").textContent=stories[i].text;
+ document.getElementById("modal").style.display="block";
+ document.body.style.overflow="hidden";
+}
+function closeStory(){
+ document.getElementById("modal").style.display="none";
+ document.body.style.overflow="";
+}
+document.getElementById("search").addEventListener("keydown",e=>{if(e.key==="Enter")filterStories()});
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeStory()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeStory()});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+  </html>
+  
